@@ -1,0 +1,23 @@
+Introdução
+- Dar contexto ao problema 
+- Descrever o que já está feito (trabalho relacionado)
+- Apresentar a hipótese que se pretende estudar e como se relaciona com o que já existe
+- Onde se encontrar o repositório para o código desenvolvido (reproducibilidade)
+
+Metodologia 
+- Indicar os passos/procedimentos realizados (tem de se perceber o fluxo/sequência)
+- Indicar os dados selecionados e porquê
+- Ferramentas/algoritmos utilizados e como
+
+Resultados
+- O que se apurou (conseguindo também visualizar através de gráficos e/ou tabelas)
+- Como vão avaliar os resultados (métricas de avaliação)
+- Comentários 
+
+Discussão/Conclusão/Notas Finais
+- Um resumo do objetivo do trabalho e do que se conseguiu 
+- Passos futuros que podiam ser realizados
+
+Referências Bibliográficas
+
+github prof - cvaz
