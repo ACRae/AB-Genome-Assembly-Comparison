@@ -1,0 +1,32 @@
+sudo apt install monit
+
+sudo monit -t
+
+
+edit vim /etc/monit/monitrc, starting from line 118 and uncomment below lines
+
+ set httpd port 2812
+    use address localhost  # only accept connection from localhost
+    allow localhost        # allow localhost to connect to the server and
+    allow admin:monit
+
+sudo monit reload to take affect
+
+
+monitor process:
+
+#  check process apache with pidfile /usr/local/apache/logs/httpd.pid
+#    start program = "/etc/init.d/httpd start" with timeout 60 seconds
+#    stop program  = "/etc/init.d/httpd stop"
+#    if cpu > 60% for 2 cycles then alert
+#    if cpu > 80% for 5 cycles then restart
+#    if totalmem > 200.0 MB for 5 cycles then restart
+#    if children > 250 then restart
+#    if disk read > 500 kb/s for 10 cycles then alert
+#    if disk write > 500 kb/s for 10 cycles then alert
+#    if failed host www.tildeslash.com port 80 protocol http and request "/somefile.html" then restart
+#    if failed port 443 protocol https with timeout 15 seconds then restart
+#    if 3 restarts within 5 cycles then unmonitor
+#    depends on apache_bin
+#    group server
+
