@@ -1,7 +1,0 @@
-run get_conda.sh
-
-sudo <conda file>
-
-install in /usr/miniconda3
-
-sudo cp /usr/miniconda3/profile.d/* /etc/profile.d
