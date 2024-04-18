@@ -16,5 +16,5 @@ while true; do
     echo "$current_date" >> "$OUTPUT_FILE"
 
     # Sleep for 1 minute
-    sleep 60
+    sleep 5
 done
