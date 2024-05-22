@@ -1,0 +1,11 @@
+#install abyss
+conda install -c bioconda -c conda-forge abyss
+
+#install flye
+conda install flye
+
+#install trinity
+conda install -c bioconda -c conda-forge trinity
+
+#install plass
+conda install -c conda-forge -c bioconda plass
