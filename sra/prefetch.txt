@@ -1,0 +1,6 @@
+Prefetch the data to work with:
+
+E. Coli - prefetch SRR29080237
+Smallpox - prefetch ERR4333272
+Polio - prefetch SRR25182350
+Rubella - prefetch SRR26754123
