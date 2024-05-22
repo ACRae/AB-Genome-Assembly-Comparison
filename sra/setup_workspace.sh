@@ -1,5 +1,6 @@
 #!/bin/bash
 
+mkdir ./fastq
 mkdir ./out
 mkdir ./out/flye
 mkdir ./out/abyss
