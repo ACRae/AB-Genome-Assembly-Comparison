@@ -15,7 +15,7 @@ fi
 
 MONITOR_PATH="../monitor/monitor.sh"
 OUT_DIR="$BASE_FOLDER/out"
-FLYE_OUT_DIR="$OUT_DIR/flye/$FASTQ_FILE_NAME"
+FLYE_OUT_DIR="$OUT_DIR/flye/flye_$FASTQ_FILE_NAME"
 TIMEOUT_SECONDS=10
 
 mkdir -p $FLYE_OUT_DIR

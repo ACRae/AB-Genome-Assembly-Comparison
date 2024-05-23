@@ -1,5 +1,4 @@
 run get_conda.sh
 
-sudo <conda file>
+sudo <downloaded conda shell file>
 
-install with no bash file.
