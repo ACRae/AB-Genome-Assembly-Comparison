@@ -11,11 +11,16 @@ else
     PID=$1
 fi
 
+
+# Get output folder from the second argument, or set it to current directory if not provided
+OUTPUT_FOLDER=${2:-"."}
+OUTPUT_FOLDER=${OUTPUT_FOLDER%/}
+
 # Get timeout from the second argument, or set it to 20 seconds if not provided
-TIMEOUT=${2:-5}
+TIMEOUT=${3:-5}
 
 # Output file
-OUTPUT_FILE="monitor.csv"
+OUTPUT_FILE="$OUTPUT_FOLDER/monitor.csv"
 
 # Function to retrieve pidstat command output
 get_pidstat_output() {
