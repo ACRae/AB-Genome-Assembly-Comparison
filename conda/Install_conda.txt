@@ -1,4 +1,0 @@
-run get_conda.sh
-
-sudo <downloaded conda shell file>
-
