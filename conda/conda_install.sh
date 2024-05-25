@@ -5,6 +5,7 @@ if sudo -n true 2>/dev/null; then
   echo "The user $(whoami) has sudo privileges."
 else
   echo "The user $(whoami) does NOT have sudo privileges."
+  exit
 fi
 
 chmod -c 666 ./conda_home.sh
