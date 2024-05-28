@@ -1,4 +1,0 @@
-
-=== Error correction and assembling warnings:
- * 0:00:02.099     4M / 395M  WARN    General                 (kmer_coverage_model.cpp   : 327)   Valley value was estimated improperly, reset to 2
-======= Warnings saved to /home/assembly/out/spades/spades_ERR4333272_1/warnings.log
