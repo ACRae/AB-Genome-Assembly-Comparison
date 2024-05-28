@@ -19,14 +19,9 @@ run_assembly_tool() {
     wait $PID
 }
 
-# Call the function for flye
+
 run_assembly_tool "$SEQ_PATH" "$RAM_USAGE" "$TIMEOUT" "$MONITOR_PATH" run_abyss.sh
 
-# Call the function for spades
 run_assembly_tool "$SEQ_PATH" "$RAM_USAGE" "$TIMEOUT" "$MONITOR_PATH" run_spades.sh
 
-# Call the function for spades
-run_assembly_tool "$SEQ_PATH" "$RAM_USAGE" "$TIMEOUT" "$MONITOR_PATH" run_plass.sh
-
-# Call the function for spades
 run_assembly_tool "$SEQ_PATH" "$RAM_USAGE" "$TIMEOUT" "$MONITOR_PATH" run_trinity.sh

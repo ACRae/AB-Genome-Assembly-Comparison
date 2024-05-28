@@ -37,7 +37,6 @@ RUN chmod +x /tmp/setup_sratools.sh && \
     /tmp/setup_sratools.sh && \
     rm /tmp/setup_sratools.sh
 
-
 # Update PATH environment variable
 ENV PATH=/usr/local/ncbi/sra-tools/bin:$PATH
 
