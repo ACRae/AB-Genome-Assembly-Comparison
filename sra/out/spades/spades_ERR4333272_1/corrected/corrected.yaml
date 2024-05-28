@@ -1,0 +1,4 @@
+- "number": !!int "1"
+  "single reads":
+  - "/home/assembly/out/spades/spades_ERR4333272_1/corrected/ERR4333272_1.00.0_0.cor.fastq.gz"
+  "type": "single"

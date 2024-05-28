@@ -29,8 +29,8 @@ get_pidstat_output() {
 
 echo "Time,CPU,Memory" > $OUTPUT_FILE
 
-CPU_COLUMN=$(get_pidstat_output | tail -n 2 | awk '{ for(i=1;i<=NF;i++) if ($i=="%CPU") {cpu=i; break} } END{print cpu}')
-MEM_COLUMN=$(get_pidstat_output | tail -n 2 | awk '{ for(i=1;i<=NF;i++) if ($i=="%MEM") {mem=i; break} } END{print mem}')
+CPU_COLUMN=$(get_pidstat_output | tail -n 2 | awk 'NR==1 { for(i=1;i<=NF;i++) if ($i=="%CPU") {print i-1} }')
+MEM_COLUMN=$(get_pidstat_output | tail -n 2 | awk 'NR==1 { for(i=1;i<=NF;i++) if ($i=="%MEM") {print i-1} }')
 
 while kill -0 $PID 2> /dev/null; do
     TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")

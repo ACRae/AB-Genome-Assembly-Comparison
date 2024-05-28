@@ -1,0 +1,7 @@
+[2024-05-28 10:36:23] root: INFO: Starting Flye 2.9.4-b1799
+[2024-05-28 10:36:23] root: DEBUG: Cmd: /opt/miniconda/bin/flye --nano-raw fastq/ERR4333272_1.fastq --out-dir /home/assembly/out/flye/flye_ERR4333272_1
+[2024-05-28 10:36:23] root: DEBUG: Python version: 3.10.14 | packaged by conda-forge | (main, Mar 20 2024, 12:45:18) [GCC 12.3.0]
+[2024-05-28 10:36:23] root: INFO: >>>STAGE: configure
+[2024-05-28 10:36:23] root: INFO: Configuring run
+[2024-05-28 10:36:24] root: ERROR: No reads above minimum length threshold (1000)
+[2024-05-28 10:36:24] root: ERROR: Pipeline aborted

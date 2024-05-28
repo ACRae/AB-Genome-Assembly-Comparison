@@ -4,9 +4,13 @@ printf "\nAbyss:\n"
 #install abyss
 conda install -c bioconda -c conda-forge abyss -y
 
+printf "\nSpades:\n"
+#install abyss
+conda install -c bioconda -c conda-forge spades -y
+
 printf "\nFlye:\n"
 #install flye
-conda install flye python=3.10 -y
+conda install flye -y
 
 printf "\nTrinity:\n"
 #install trinity

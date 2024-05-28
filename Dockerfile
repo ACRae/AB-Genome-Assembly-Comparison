@@ -22,20 +22,24 @@ ENV PATH=/opt/miniconda/bin:$PATH
 # Initialize conda
 RUN conda init bash
 
-# Run the install_assemblers.sh script directly from the host machine
-COPY ./assembler/install_assemblers.sh /tmp/install_assemblers.sh
-RUN chmod +x /tmp/install_assemblers.sh && \
-    /bin/bash /tmp/install_assemblers.sh && \
-    rm /tmp/install_assemblers.sh
-
+RUN conda install -c bioconda -c conda-forge abyss -y
+RUN conda install -c bioconda -c conda-forge spades -y
+RUN conda install flye python=3.10 -y
+RUN conda install -c bioconda -c conda-forge trinity -y
+RUN conda install -c conda-forge -c bioconda plass -y
 
 # Copy the scripts into the container
-COPY ./monitor/monitor.sh /usr/local/bin/monitor.sh
+COPY ./monitor/* /usr/local/bin/
 # Copy the contents of the run folder into a directory included in the PATH
 COPY ./run/* /usr/local/bin/
 
 # Make all scripts in the run folder executable
 RUN chmod +x /usr/local/bin/*
+
+# Create necessary directory
+RUN mkdir -p /home/assembly
+
+WORKDIR /home/assembly
 
 # Set the entry point to bash
 ENTRYPOINT ["/bin/bash"]
