@@ -12,11 +12,11 @@ echo "Dumping fastq..."
 printf "\nE. Coli:\n"
 fasterq-dump "$SRA_CACHE_DIR/SRR29080237" -O $OUTPUT_DIR
 
-printf "\nSmallpox:\n"
-fasterq-dump "$SRA_CACHE_DIR/ERR4333272" -O $OUTPUT_DIR
+printf "\nEnterovirus:\n"
+fasterq-dump "$SRA_CACHE_DIR/SRR28708090" -O $OUTPUT_DIR
 
-printf "\nPolio:\n"
-fasterq-dump "$SRA_CACHE_DIR/SRR25182350" -O $OUTPUT_DIR
+printf "\nInfluenza A:\n"
+fasterq-dump "$SRA_CACHE_DIR/SRR29182424" -O $OUTPUT_DIR
 
 printf "\nRubella:\n"
 fasterq-dump "$SRA_CACHE_DIR/SRR26754123" -O $OUTPUT_DIR

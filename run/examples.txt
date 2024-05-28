@@ -1,0 +1,3 @@
+run_abyss.sh "fastq/SRR28708090_1.fastq fastq/SRR28708090_2.fastq" 8G 20 ./monitor/monitor.sh
+run_abyss.sh "fastq/SRR28708090_1.fastq fastq/SRR28708090_2.fastq"
+run_all "fastq/SRR28708090_1.fastq fastq/SRR28708090_2.fastq" 5G 20 ./monitor/monitor.sh

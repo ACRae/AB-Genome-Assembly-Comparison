@@ -14,13 +14,13 @@ run_assembly_tool() {
     local MONITOR_PATH=$4
     local TOOL_SCRIPT=$5
 
-    $TOOL_SCRIPT $SEQ_PATH $RAM_USAGE $TIMEOUT $MONITOR_PATH
+    "$TOOL_SCRIPT" "$SEQ_PATH" "$RAM_USAGE" "$TIMEOUT" "$MONITOR_PATH"
     local PID=$!
     wait $PID
 }
 
 # Call the function for flye
-run_assembly_tool "$SEQ_PATH" "$RAM_USAGE" "$TIMEOUT" "$MONITOR_PATH" run_flye.sh
+run_assembly_tool "$SEQ_PATH" "$RAM_USAGE" "$TIMEOUT" "$MONITOR_PATH" run_abyss.sh
 
 # Call the function for spades
 run_assembly_tool "$SEQ_PATH" "$RAM_USAGE" "$TIMEOUT" "$MONITOR_PATH" run_spades.sh

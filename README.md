@@ -23,3 +23,14 @@ You will find the `cache` and `fastq` folders in your directory.
 In order to run all the assemblers all you have to do is:
 
 `run_all <path to the fastq file>`
+
+
+## To plot monitor graphs
+Install python requirements:
+* `pip install -r requirements.txt [--break-system-packages]`
+
+Get the geckodriver and setup PATH:
+* https://github.com/mozilla/geckodriver/releases
+
+Plot graphs:
+* Run: `python3 plot_monitor.py`
