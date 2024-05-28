@@ -30,7 +30,7 @@ TIMEOUT_SECONDS=10
 
 mkdir -p $TRINITY_OUT_DIR
 
-Trinity --seqType fq --single $FASTQ_PATH --max_memory $RAM_USAGE --output $TRINITY_OUT_DIR &
+Trinity --seqType fq --single $FASTQ_PATH --max_memory $RAM_USAGE --output $TRINITY_OUT_DIR --no_salmon &
 
 TRINITY_PID=$!
 

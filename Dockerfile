@@ -28,6 +28,19 @@ RUN conda install flye python=3.10 -y
 RUN conda install -c bioconda -c conda-forge trinity -y
 RUN conda install -c conda-forge -c bioconda plass -y
 
+
+# Copy the setup-apt.sh script into the container
+COPY ./sra/setup_sratools.sh /tmp/setup_sratools.sh
+
+# Run the setup-apt.sh script
+RUN chmod +x /tmp/setup_sratools.sh && \
+    /tmp/setup_sratools.sh && \
+    rm /tmp/setup_sratools.sh
+
+
+# Update PATH environment variable
+ENV PATH=/usr/local/ncbi/sra-tools/bin:$PATH
+
 # Copy the scripts into the container
 COPY ./monitor/* /usr/local/bin/
 # Copy the contents of the run folder into a directory included in the PATH

@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Assign variables
+SEQ_PATH=$1
+RAM_USAGE=${2:-"5G"}
+TIMEOUT=${3:-10}
+MONITOR_PATH=${4:-"monitor.sh"}
+
+# Define a function to run an assembly tool
+run_assembly_tool() {
+    local SEQ_PATH=$1
+    local RAM_USAGE=$2
+    local TIMEOUT=$3
+    local MONITOR_PATH=$4
+    local TOOL_SCRIPT=$5
+
+    $TOOL_SCRIPT $SEQ_PATH $RAM_USAGE $TIMEOUT $MONITOR_PATH
+    local PID=$!
+    wait $PID
+}
+
+# Call the function for flye
+run_assembly_tool "$SEQ_PATH" "$RAM_USAGE" "$TIMEOUT" "$MONITOR_PATH" run_flye.sh
+
+# Call the function for spades
+run_assembly_tool "$SEQ_PATH" "$RAM_USAGE" "$TIMEOUT" "$MONITOR_PATH" run_spades.sh
+
+# Call the function for spades
+run_assembly_tool "$SEQ_PATH" "$RAM_USAGE" "$TIMEOUT" "$MONITOR_PATH" run_plass.sh
+
+# Call the function for spades
+run_assembly_tool "$SEQ_PATH" "$RAM_USAGE" "$TIMEOUT" "$MONITOR_PATH" run_trinity.sh

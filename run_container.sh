@@ -7,8 +7,13 @@ TARGET_PATH="/home/assembly"
 # Get the current image ID (if it exists)
 CURRENT_IMAGE_ID=$(docker images -q assemblers_image)
 
-# Build the Docker image
-docker build -t assemblers_image .
+# build image
+if docker build -t assemblers_image .; then
+    echo "Docker build successful."
+else
+    echo "Docker build failed."
+    exit 1
+fi
 
 # Get the new image ID after build
 NEW_IMAGE_ID=$(docker images -q assemblers_image)
