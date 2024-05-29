@@ -1,0 +1,25 @@
+All statistics are based on contigs of size >= 500 bp, unless otherwise noted (e.g., "# contigs (>= 0 bp)" and "Total length (>= 0 bp)" include all contigs).
+
+Assembly                    trinity_SRR292078911.Trinity
+# contigs (>= 0 bp)         65                          
+# contigs (>= 1000 bp)      22                          
+# contigs (>= 5000 bp)      0                           
+# contigs (>= 10000 bp)     0                           
+# contigs (>= 25000 bp)     0                           
+# contigs (>= 50000 bp)     0                           
+Total length (>= 0 bp)      64952                       
+Total length (>= 1000 bp)   43498                       
+Total length (>= 5000 bp)   0                           
+Total length (>= 10000 bp)  0                           
+Total length (>= 25000 bp)  0                           
+Total length (>= 50000 bp)  0                           
+# contigs                   39                          
+Largest contig              3742                        
+Total length                56369                       
+GC (%)                      39.14                       
+N50                         1655                        
+N90                         769                         
+auN                         1946.6                      
+L50                         11                          
+L90                         31                          
+# N's per 100 kbp           0.00                        

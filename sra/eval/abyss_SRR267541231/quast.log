@@ -1,0 +1,28 @@
+/opt/quast-5.2.0/quast.py out/abyss/abyss_SRR267541231/SRR267541231-6.fa -o /home/assembly/eval/abyss_SRR267541231
+
+Version: 5.2.0, 3d87c606
+
+System information:
+  OS: Linux-6.1.0-21-amd64-x86_64-with-glibc2.31 (linux_64)
+  Python version: 3.12.3
+  CPUs number: 8
+
+Started: 2024-05-29 16:58:16
+
+Logging to /home/assembly/eval/abyss_SRR267541231/quast.log
+NOTICE: Output directory already exists and looks like a QUAST output dir. Existing results can be reused (e.g. previously generated alignments)!
+NOTICE: Maximum number of threads is set to 2 (use --threads option to set it manually)
+
+CWD: /home/assembly
+Main parameters: 
+  MODE: default, threads: 2, min contig length: 500, min alignment length: 65, min alignment IDY: 95.0, \
+  ambiguity: one, min local misassembly length: 200, min extensive misassembly length: 1000
+
+WARNING: Can't draw plots: python-matplotlib is missing or corrupted.
+
+Contigs:
+  Pre-processing...
+WARNING: Skipping SRR267541231-6 because it doesn't contain contigs >= 500 bp.
+
+
+ERROR! None of the assembly files contains correct contigs. Please, provide different files or decrease --min-contig threshold.

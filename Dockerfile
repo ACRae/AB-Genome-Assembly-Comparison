@@ -12,6 +12,10 @@ RUN apt-get update && apt-get install -y \
     curl \
     perl \
     libxml-libxml-perl \
+    pkg-config \
+    libfreetype6-dev \
+    libpng-dev \
+    python3-matplotlib \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean 
 
@@ -25,13 +29,19 @@ ENV PATH=/opt/miniconda/bin:$PATH
 
 # Initialize conda
 RUN conda init bash
+RUN conda install -c bioconda abyss -y
+RUN conda install -c bioconda spades -y
+RUN conda install -c bioconda trinity -y
 
-RUN conda install -c bioconda -c conda-forge abyss -y
-RUN conda install -c bioconda -c conda-forge spades -y
-RUN conda install flye python=3.10 -y
-RUN conda install -c bioconda -c conda-forge trinity -y
-RUN conda install -c conda-forge -c bioconda plass -y
 
+# Install contigs quality assessment tool
+RUN wget https://github.com/ablab/quast/releases/download/quast_5.2.0/quast-5.2.0.tar.gz -O /tmp/quast-5.2.0.tar.gz \
+    && tar -xvf /tmp/quast-5.2.0.tar.gz -C /opt \
+    && rm /tmp/quast-5.2.0.tar.gz
+
+RUN /opt/quast-5.2.0/setup.py install
+
+ENV PATH=/opt/quast-5.2.0:$PATH
 
 # Copy the setup-apt.sh script into the container
 COPY ./sra/setup_sratools.sh /tmp/setup_sratools.sh
