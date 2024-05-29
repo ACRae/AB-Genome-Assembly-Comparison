@@ -25,7 +25,10 @@ You will only need to do this once!
 
 ## 3. Run the assemblers
 In order to run all the assemblers all you have to do is:
-`run_all <path to the fastq file> <RAM usage>`
+
+`run_all <path to the fastq folder> <RAM usage>`
+
+Example: `run_all fastq 16G`
 
 This will start the genome assembly for every data sample.
 
