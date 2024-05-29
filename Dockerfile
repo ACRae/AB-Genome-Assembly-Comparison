@@ -15,7 +15,6 @@ RUN apt-get update && apt-get install -y \
     pkg-config \
     libfreetype6-dev \
     libpng-dev \
-    python3-matplotlib \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean 
 
@@ -33,6 +32,7 @@ RUN conda install -c bioconda abyss -y
 RUN conda install -c bioconda spades -y
 RUN conda install -c bioconda trinity -y
 
+RUN pip install matplotlib --break-system-packages
 
 # Install contigs quality assessment tool
 RUN wget https://github.com/ablab/quast/releases/download/quast_5.2.0/quast-5.2.0.tar.gz -O /tmp/quast-5.2.0.tar.gz \
