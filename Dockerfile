@@ -9,7 +9,11 @@ RUN apt-get update && apt-get install -y \
     wget \
     bzip2 \
     sysstat \
-    && apt-get clean
+    curl \
+    perl \
+    libxml-libxml-perl \
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get clean 
 
 # Download and install Miniconda
 RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /tmp/miniconda.sh \
@@ -36,6 +40,7 @@ COPY ./sra/setup_sratools.sh /tmp/setup_sratools.sh
 RUN chmod +x /tmp/setup_sratools.sh && \
     /tmp/setup_sratools.sh && \
     rm /tmp/setup_sratools.sh
+    
 
 # Update PATH environment variable
 ENV PATH=/usr/local/ncbi/sra-tools/bin:$PATH
