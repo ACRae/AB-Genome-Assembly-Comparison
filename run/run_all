@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Assign variables
-SEQ_PATH=$1
+FASTQ_PATH=${1:-"fastq"}
 RAM_USAGE=${2:-"5G"}
 TIMEOUT=${3:-10}
 MONITOR_PATH=${4:-"monitor.sh"}
@@ -20,8 +20,19 @@ run_assembly_tool() {
 }
 
 
-run_assembly_tool "$SEQ_PATH" "$RAM_USAGE" "$TIMEOUT" "$MONITOR_PATH" run_abyss.sh
+# Loop through the files in the directory
+for FILE in "$FASTQ_PATH"/*_1.fastq; do
+    # Extract the base name (SRRxxxx)
+    BASENAME=$(basename "$FILE" _1.fastq)
 
-run_assembly_tool "$SEQ_PATH" "$RAM_USAGE" "$TIMEOUT" "$MONITOR_PATH" run_spades.sh
+    # Create the string with both the _1.fastq and _2.fastq files
+    FILE_PAIR="$FASTQ_PATH/${BASENAME}_1.fastq $FASTQ_PATH/${BASENAME}_2.fastq"
 
-run_assembly_tool "$SEQ_PATH" "$RAM_USAGE" "$TIMEOUT" "$MONITOR_PATH" run_trinity.sh
+
+    run_assembly_tool "$FILE_PAIR" "$RAM_USAGE" "$TIMEOUT" "$MONITOR_PATH" run_abyss.sh
+
+    run_assembly_tool "$FILE_PAIR" "$RAM_USAGE" "$TIMEOUT" "$MONITOR_PATH" run_spades.sh
+
+    run_assembly_tool "$FILE_PAIR" "$RAM_USAGE" "$TIMEOUT" "$MONITOR_PATH" run_trinity.sh
+
+done
