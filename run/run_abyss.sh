@@ -6,17 +6,15 @@ BASE_FOLDER=$(pwd -P)
 # Get the FASTQ_PATH from the first argument
 FASTQ_PATH=$1
 
-# Split the input string into two variables
-set -- $FASTQ_PATH
-
 # Assign the split values to individual variables
-FASTQ_LEFT=$1
-FASTQ_RIGHT=$2
+FASTQ_LEFT=${FASTQ_PATH%% *}
+FASTQ_RIGHT=${FASTQ_PATH#* }
+
 
 # Handle optional parameters with default values
-RAM_USAGE=${3:-"5G"}
-TIMEOUT_SECONDS=${4:-10}
-MONITOR_PATH=${5:-"monitor.sh"}
+RAM_USAGE=${2:-"5G"}
+TIMEOUT_SECONDS=${3:-10}
+MONITOR_PATH=${4:-"monitor.sh"}
 
 
 # Check if FASTQ_PATH is provided
