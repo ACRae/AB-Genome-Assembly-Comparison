@@ -55,3 +55,6 @@ Get the geckodriver and setup PATH:
 
 Plot graphs:
 * Run: `python3 plot_monitor.py`
+
+# Results
+The experiment results can be found here [Evaluation and Assembly Output](https://drive.google.com/drive/folders/1spAZ4o9QbmJz_wFbOouq3-vzsJaqpFvK?usp=sharing)
