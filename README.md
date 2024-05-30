@@ -1,6 +1,10 @@
 # Genome Assemblers Comparison
-A repistory for comparison of several genome assemblers.
+A Docker image based workflow for the comparison of several genome assemblers.
 
+The workflow is setup to compare the following assemblers:
+* [ABySS](https://github.com/bcgsc/abyss)
+* [Trinity](https://github.com/trinityrnaseq/trinityrnaseq)
+* [SPAdes](https://github.com/ablab/spades)
 
 # Requirements
 * Docker
