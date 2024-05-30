@@ -1,12 +1,11 @@
 # Genome Assemblers Comparison
 A repistory for comparison of several genome assemblers.
 
-<br>
+
 # Requirements
 * Docker
 * Python 3
 
-<br>
 # Instructions 
 
 ## 1. Build image and run docker container
