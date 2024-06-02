@@ -1,7 +1,14 @@
 # Genome Assemblers Comparison
-A repistory for comparison of several genome assemblers.
+A Docker image based workflow for the comparison of several genome assemblers.
 
-<br>
+The workflow is setup to compare the following assemblers:
+* [ABySS](https://github.com/bcgsc/abyss)
+* [Trinity](https://github.com/trinityrnaseq/trinityrnaseq)
+* [SPAdes](https://github.com/ablab/spades)
+
+# Requirements
+* Docker
+* Python 3
 
 # Instructions 
 
@@ -52,3 +59,6 @@ Get the geckodriver and setup PATH:
 
 Plot graphs:
 * Run: `python3 plot_monitor.py`
+
+# Results
+The experiment results can be found here [Evaluation and Assembly Output](https://drive.google.com/drive/folders/1spAZ4o9QbmJz_wFbOouq3-vzsJaqpFvK?usp=sharing)
